@@ -96,12 +96,26 @@
     }
 
     @include tablet-extra{
-        bottom: -30rem;
+        bottom: 0rem;
+        right: -20rem;
+    }
+
+    @include mobile-extra{
+        right: -18rem;
     }
 
     @include mobile-l{
         width: 85px;
-        bottom: -7rem;
+        right: -15rem
+    }
+
+    @include mobile-m{
+        right: -13rem;
+        top: 7rem;
+    }
+
+    @include mobile-s{
+        top: 8rem;
     }
 
 
