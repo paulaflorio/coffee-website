@@ -1,0 +1,142 @@
+@import "./variables";
+@import "./responsive";
+
+.quality{
+    padding: 7rem 0 2rem;
+    background-color: #fff;
+
+}
+
+.quality-container{
+    @extend .container;
+
+    @include laptop{
+        padding: 0 4rem;
+    }
+
+    @include mobile-m{
+        padding: 0 2rem;
+    }
+}
+
+.quality-content{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 6rem;
+    // row-gap: 2.5rem;
+
+    @include tablet{
+        grid-template-columns: 450px;
+        row-gap: 3rem;
+        justify-content: center;
+    }
+
+    @include mobile-extra{
+        grid-template-columns: 350px;
+    }
+
+    @include mobile-l{
+        grid-template-columns: 300px;
+    }
+    
+    @include mobile-s{
+        grid-template-columns: 200px;
+    }
+}
+
+.quality-images{
+    position: relative;
+    margin-top: 2rem;
+    justify-self: center;
+}
+
+.quality-img-big{
+    width: 428px;
+    border-radius: .5rem;
+
+    @include tablet{
+        width: 350px;
+    }
+
+    @include mobile-extra{
+        width: 300px;
+    }
+
+    @include mobile-l{
+        width: 250px;
+    }
+
+    @include mobile-m{
+        width: 200px;
+    }
+
+}
+
+.quality-img-small{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    border-radius: .5rem;
+    width: 153px;
+    transform: translateX(-7rem);
+
+    @include tablet{
+        width: 110px;
+        transform: translateX(-4rem);
+    }
+
+    @include mobile-l{
+        width: 90px;
+    }
+
+    @include mobile-m{
+        width: 80px;
+        transform: translateX(-3rem);
+    }
+}
+
+.quality-title{
+    font-size: 1.5rem;
+}
+
+.quality-price{
+    margin-bottom: .25rem;
+    font-size: 1.5rem;
+}
+
+.quality-special{
+    margin-bottom: 1rem;
+    font-size: .813rem;
+    display: block;
+    color: $text-color;
+}
+
+.quality-description{
+    margin-bottom: 2.5rem;
+    color: $text-color;
+
+}
+
+.quality-buttons{
+    display: flex;
+    align-items: center;
+    column-gap: 2rem;
+}
+
+.quality-button{
+    font-size: .938rem;
+    text-transform: uppercase;
+    color: $title-color;
+    column-gap: .75rem;
+    display: inline-flex;
+}
+
+.quality-button i{
+    font-size: 1.25rem;
+    transition: .4s;
+}
+
+.quality-button:hover i{
+    transform:  translateX(.25rem);
+}

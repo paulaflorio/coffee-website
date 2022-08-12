@@ -1,0 +1,170 @@
+@import "./variables";
+@import "./responsive";
+
+.products{
+    padding: 7rem 0 2rem;
+    
+}
+
+.products-container{
+    @extend .container;
+
+    @include laptop{
+        padding: 0 4rem;
+    }
+
+    @include mobile-m{
+        padding: 0 2rem;
+    }
+}
+
+.products-filters{
+    margin: 4rem 0 5.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    // gap: 2.5rem 2rem;
+    column-gap: 4rem;
+
+    @include laptop{
+        grid-template-columns: repeat(3, 200px);
+        gap: 2.5rem 2rem;
+        margin: 3rem 0;
+    }
+
+    @include tablet{
+        grid-template-columns: repeat(3, 150px);
+    }
+
+    @include mobile-extra{
+        grid-template-columns: repeat(2, 150px);
+    }
+
+    @include mobile-l{
+        grid-template-columns: 150px;
+        
+    }
+}
+
+.products-item{
+    cursor: pointer;
+}
+
+.products-line{
+    position: relative;
+}
+
+.products-line::before{
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 40px;
+    background-color: $text-color-light;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+
+.active-product, .products-title{
+    color: $text-color;
+    font-size: $h3-font-size;
+    margin-bottom: .5rem;
+}
+
+.products-stock{
+    color: $text-color;
+    font-size: 0.813rem;
+}
+
+.products-content{
+    display: grid;
+    grid-template-columns: repeat(3, 262px);
+    column-gap: 5rem!important;
+    padding-bottom: 3rem;
+    gap: 1.5rem;
+    justify-content: center;
+
+    @include laptop{
+        grid-template-columns: repeat(2, 262px);
+    }
+
+    @include tablet{
+        grid-template-columns: repeat(2, 230px);
+    }
+
+    @include mobile-extra{
+        grid-template-columns: repeat((1, 230px));
+    }
+
+    @include mobile-l{
+        grid-template-columns: repeat(1, 200px);
+    }
+
+}
+
+.products-card{
+    border-radius: 0.75rem;
+    background-color: #fff;
+}
+
+.products-shape{
+    padding: 2rem 0 ;
+    border-radius: 0.75rem 0.75rem 0 0 ;
+    text-align: center;
+    background-color: $card-color;
+}
+
+.products-img{
+    width: 200px;
+    transition: .4s;
+
+    @include tablet{
+        width: 150px;
+    }
+}
+
+.products-card:hover .products-img{
+    transform: translateY(-.25rem);
+}
+
+.products-data{
+    position: relative;
+    padding: 1rem 0 1.5rem 1.5rem;
+
+    @include tablet{
+        padding: 1rem 0 1.25rem 1rem;
+    }
+}
+
+.products-price{
+    font-size: 1.25rem;
+
+    @include tablet{
+        font-size: $h2-font-size;
+    }
+}
+
+.products-name{
+    font-size: 1rem;
+
+    @include tablet{
+        font-size: $normal-font-size
+    }
+}
+
+.products-button{
+    @extend .button;
+    position: absolute;
+    font-size: 1.5rem;
+    padding: 0.75rem !important;
+    right: 1.5rem;
+    top: -1.5rem;
+    border-radius: 50%!important;
+    box-shadow: 0 4px 12px hsla(206, 4%, 4%, .2);
+    display: inline-flex;
+
+}
+
+.active-product .products-title{
+    color: $title-color;
+}

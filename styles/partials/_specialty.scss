@@ -1,0 +1,130 @@
+@import "./variables";
+@import "./responsive";
+
+.specialty{
+    @extend .container;
+    padding: 7rem 0 2rem;
+
+}
+
+.specialty-box{
+    display: grid;
+    grid-template-columns: 2fr .5fr;
+
+    @include laptop{
+        display: flex ;
+        flex-direction: column ;
+        padding: 0 4rem;
+    }
+
+    @include mobile-m{
+        padding: 0 2rem;
+    }
+
+}
+
+.section-title{
+    padding-right: 15rem;
+    padding-left: 1.75rem;
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+    color: $title-color;
+    position: relative;
+
+    @include tablet{
+        padding-right: 1.75rem;
+    }
+    
+}
+
+.section-title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 28px;
+    width: 4px;
+    top: 12px;
+    background-color: $first-color-alt;
+}
+
+.specialty-button{
+    @extend .button;
+    margin-left: 1.25rem;
+}
+
+.specialty-category{
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    column-gap: 8rem;
+    margin-top: 4rem;
+    justify-content: center;
+    // row-gap: 2.5rem;
+
+    @include laptop{
+        grid-template-columns: repeat(2, 250px);
+        row-gap: 2.5rem;
+    }
+
+    @include tablet{
+        grid-template-columns: 200px;
+        row-gap: 4rem;
+
+    }
+
+}
+
+.specialty-line{
+    position: relative;
+}
+
+.specialty-line::before{
+    content: '';
+    width: 1px;
+    height: 120px;
+    background-color: $text-color-light;
+    position: absolute;
+    right: -5rem;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+
+    @include laptop{
+        display: none;
+    }
+
+}
+
+
+.specialty-img{
+    width: 80px;
+    margin-bottom: 1.5rem;
+    transition: .4s;
+
+    @include mobile-l{
+        width: 60px;
+    }
+
+}
+
+.specialty-title{
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.specialty-description{
+    color: $text-color;
+}
+
+.specialty-group{
+    @include tablet{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.specialty-group:hover .specialty-img{
+    transform: translateY(-.25rem);
+}

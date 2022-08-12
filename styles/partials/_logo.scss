@@ -1,0 +1,45 @@
+@import "./variables";
+@import "./responsive";
+
+.logo{
+    padding: 7rem 0 2rem;
+    background-color: #fff;
+
+}
+
+.logo-container{
+    @extend .container;
+    display: grid;
+    gap: 2.5rem 2rem;
+    grid-template-columns: repeat(5,1fr);
+    padding: 3.5rem 0 ;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid $text-color-light;
+
+    @include laptop{
+        padding: 2rem 4rem;
+    }
+
+    @include tablet{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include mobile-m{
+        grid-template-columns: repeat((2, 1fr));
+    }
+
+
+}
+
+.logo-img{
+    width: 110px;
+    mix-blend-mode: luminosity;
+    opacity: .4;
+    transition: .4s;
+
+}
+
+.logo-img:hover{
+    opacity: .8;
+}
